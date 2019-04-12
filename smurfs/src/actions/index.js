@@ -45,3 +45,22 @@ export const addSmurf = smurf => {
     })
   }
 }
+
+export const deleteSmurf = id => {
+  return dispatch => {
+    dispatch({type: FETCHING})
+    axios.delete(`http://localhost:3333/smurfs/${id}`, id)
+    .then(res => {
+      dispatch({
+        type: SUCCESS,
+        payload: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: ERROR,
+        payload: err
+      })
+    })
+  }
+}

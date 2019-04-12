@@ -6,8 +6,8 @@ class SmurfForm extends React.Component {
         this.state = {
             name: '',
             age: '',
-            height: ''
-            
+            height: '',
+            id: Date.now()
         }
     }
 
