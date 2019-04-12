@@ -1,4 +1,4 @@
-import { FETCHING, SUCCESS, ERROR } from "../actions";
+import { FETCHING, SUCCESS, ERROR, ADD_SMURF, ADD_SUCCESS } from "../actions";
 
 /*
   Be sure to import in all of the action types from `../actions`
@@ -28,6 +28,17 @@ const reducer =(state= initialState, action) => {
         smurfs: action.payload,
         error: null
       }
+    case ADD_SMURF:
+      return {
+        ...state,
+        addingSmurf: true
+      }
+    case ADD_SUCCESS:
+    return {
+      ...state,
+      smurfs: action.payload,
+      addingSmurf: false
+    }
     case ERROR:
       return {
         ...state,
